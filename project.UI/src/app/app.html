@@ -1,63 +1,27 @@
-<div class="container" [class.dark-mode]="isDarkMode">
+<section class="add-project">
 
-  <header>
-    <h1>Hi, I'm Afsar 👋</h1>
-    <p>Final Year BCA Student | Angular Developer</p>
+  <h2>Add New Project</h2>
 
-    <button (click)="toggleTheme()">
-      {{ isDarkMode ? '☀️ Light Mode' : '🌙 Dark Mode' }}
-    </button>
+  <input
+    type="text"
+    placeholder="Enter Project Name"
+    [(ngModel)]="newProject"
+  />
 
-    <h4>{{ currentDate }}</h4>
-  </header>
+  <button (click)="addProject()">
+    Add Project
+  </button>
 
-  <section class="stats">
-    <div class="stat-card">
-      <h2>{{ totalProjects }}</h2>
-      <p>Projects Completed</p>
+</section>
+
+<section class="project-list">
+
+  <h2>My Projects</h2>
+
+  @for(project of projects; track project) {
+    <div class="project-card">
+      {{ project }}
     </div>
+  }
 
-    <div class="stat-card">
-      <h2>{{ skillsCount }}</h2>
-      <p>Skills Learned</p>
-    </div>
-  </section>
-
-  <section class="cards">
-
-    <div class="card">
-      <h3>About Me</h3>
-      <p>
-        Passionate about Angular, .NET, MySQL, and building real-world
-        applications.
-      </p>
-    </div>
-
-    <div class="card">
-      <h3>Skills</h3>
-      <ul>
-        <li>Angular</li>
-        <li>TypeScript</li>
-        <li>.NET Core</li>
-        <li>MySQL</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <h3>Projects</h3>
-      <p>Student Attendance System</p>
-      <p>Dashboard Annotation Feature</p>
-      <p>JWT Authentication App</p>
-    </div>
-
-    <div class="card">
-      <h3>Contact</h3>
-      <p>Email: afsar@example.com</p>
-      <p>Phone: +91 XXXXX XXXXX</p>
-    </div>
-
-  </section>
-
-</div>
-
-<router-outlet></router-outlet>
+</section>
