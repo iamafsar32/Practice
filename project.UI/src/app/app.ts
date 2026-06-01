@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
 @Component({
@@ -8,5 +8,15 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.css'
 })
 export class App {
-  protected readonly title = signal('project.UI');
+
+  isDarkMode = false;
+
+  totalProjects = 3;
+  skillsCount = 4;
+
+  currentDate = new Date().toLocaleString();
+
+  toggleTheme() {
+    this.isDarkMode = !this.isDarkMode;
+  }
 }
