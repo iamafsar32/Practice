@@ -1,10 +1,30 @@
-<div class="container">
+<div class="container" [class.dark-mode]="isDarkMode">
+
   <header>
     <h1>Hi, I'm Afsar 👋</h1>
     <p>Final Year BCA Student | Angular Developer</p>
+
+    <button (click)="toggleTheme()">
+      {{ isDarkMode ? '☀️ Light Mode' : '🌙 Dark Mode' }}
+    </button>
+
+    <h4>{{ currentDate }}</h4>
   </header>
 
+  <section class="stats">
+    <div class="stat-card">
+      <h2>{{ totalProjects }}</h2>
+      <p>Projects Completed</p>
+    </div>
+
+    <div class="stat-card">
+      <h2>{{ skillsCount }}</h2>
+      <p>Skills Learned</p>
+    </div>
+  </section>
+
   <section class="cards">
+
     <div class="card">
       <h3>About Me</h3>
       <p>
@@ -35,7 +55,9 @@
       <p>Email: afsar@example.com</p>
       <p>Phone: +91 XXXXX XXXXX</p>
     </div>
+
   </section>
+
 </div>
 
 <router-outlet></router-outlet>
