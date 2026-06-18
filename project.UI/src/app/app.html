@@ -1,0 +1,27 @@
+<section class="add-project">
+
+  <h2>Add New Project</h2>
+
+  <input
+    type="text"
+    placeholder="Enter Project Name"
+    [(ngModel)]="newProject"
+  />
+
+  <button (click)="addProject()">
+    Add Project
+  </button>
+
+</section>
+
+<section class="project-list">
+
+  <h2>My Projects</h2>
+
+  @for(project of projects; track project) {
+    <div class="project-card">
+      {{ project }}
+    </div>
+  }
+
+</section>
